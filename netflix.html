@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                                                                                                                                                                                                          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-image: url('https://wallpapers.com/images/hd/movie-poster-background-p5qblffj7cvswl5g.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.865);
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            z-index: 10;
+            background-color: #161616;
+        }
+
+        .navbar h1{
+         color:rgb(255, 255, 255);
+         font-size: 3rem;
+         text-align: left;
+         margin-left: 2%;
+        }
+
+        .navbar button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .header-content input[type="email"] {
+            padding: 15px;
+            width: 300px;
+            border: none;
+            outline: none;
+        }
+
+        .header-content button {
+            padding: 15px 30px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .content-section {
+            padding: 50px;
+            color: #fff;
+            text-align: center;
+            background-color: #111;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.2rem;
+        }
+
+        .content-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .content-section img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Movies Section */
+        .movies-section {
+            padding: 20px;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .movies-section h2 {
+            margin-bottom: 20px
+        }
+
+        .movies-slider {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+        }
+
+        .movies-slider::-webkit-scrollbar {
+            display:none;
+        }
+
+        .movie {
+            min-width: 200px;
+            margin-left:15px;
+            transition: transform 0.4s;
+            width: 250px;
+            margin-bottom: 50px;
+            cursor: pointer;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .movie img {
+            width: 95%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgb(0, 0, 0);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .movie:hover {
+            transform: scale(1.1);
+        }
+
+        .movie:hover img {
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+    
+
+        .footer {
+            background-color: #000;
+            color: #777;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="navbar">
+        <h1>FlixVerse</h1>
+        <button>Sign In</button>
+    </div>
+
+    <div class="header-content">
+        <h1>Unlimited movies, TV shows, and more</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <input type="email" placeholder="Email address">
+        <button>Get Started</button>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Enjoy on your TV</h2>
+    <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+</div><div class="container">
+    <img src="https://img.onmanorama.com/content/dam/mm/en/entertainment/entertainment-news/images/2025/3/7/officer-on-duty.jpg?w=1120&h=583" alt = "Movie">
+    <video src="" muted loop></video>
+</div>
+
+<div class="movies-section">
+    <h2>Popular Movies</h2>
+    <div class="movies-slider">
+        <div class="movie"><img src="https://m.media-amazon.com/images/M/MV5BMDNkZmZlOWEtMjIxYS00MzMwLTg4ODYtMDRmNzY2NjY3NDdkXkEyXkFqcGc@._V1_.jpg" alt="Movie"></div>
+        <div class="movie"><img src="https://www.acmodasi.in/amdb/images/movie/c/6/manjummel-boys-2024-SHKWj7.jpg"alt="Movie"></div>
+        <div class="movie"><img src="https://image.tmdb.org/t/p/original/k5RWPaNjgRcNvGoawYaQHQwyctI.jpg"alt="Movie"></div>
+        <div class="movie"><img src="https://i.pinimg.com/originals/8c/54/f0/8c54f0e72680839d00a0f34f153a2e83.jpg"alt="Movie"></div>
+        <div class="movie"><img src="https://feeds.abplive.com/onecms/images/uploaded-images/2021/07/10/273e787ba809e725948334340c658e68_original.jpg"alt="Movie"></div>
+        <div class="movie"><img src="https://preview.redd.it/kannur-squad-release-might-be-preponed-to-september-28th-v0-lpyhyhga4ulb1.png?auto=webp&s=8ae10598aae993bf47368943e43c69cd55e25302"alt="Movie"></div>
+        <div class="movie"><img src="https://images.squarespace-cdn.com/content/v1/5033fa18c4aacd0a249de051/1703906060996-ZACSJQHDQ7GA2OVI7IZY/fri-leo-ray-taylor-show-yt.jpg?format=1500w"alt="Movie"></div>
+</div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 FlixVerse. All rights are reserved.</p>
+</div>
+
+</body>
+</html>

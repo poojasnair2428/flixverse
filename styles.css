@@ -1,0 +1,230 @@
+/* General Styling */
+body {
+    font-family:'Franklin Gothic Medium';
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000000, #48494a, #787878);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Header with Shrinking Effect */
+header {
+    background: black;
+    background-size: 20px; 
+    background-position: center;   
+    background-repeat: no-repeat;
+    padding: 10px 10px;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+nav a {
+    font-size: 25px;  /* Increased font size */
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;  /* Increased spacing */
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav a {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #ffcc00;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #1a1a1a, #333333);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+}
+
+
+header .logo h1{
+    color:rgb(255, 255, 255);
+    font-size: 3rem;
+    text-align: justify;
+    margin-left: 10%;
+}
+
+header.shrink {
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Search Bar Animation */
+#search-bar {
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    width: 250px;
+    outline: none;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+/* Featured Movie Section */
+.feat {
+    text-align: left;
+    padding: 100px 20px 20px;
+    opacity: 100;
+    transform: translateY(-50px) translateX(-50);
+    animation: fadeInUp 1.2s forwards;
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
+}
+
+.fimage {
+    width: 1000px;
+    border-radius: 30px;
+    text-align: center;
+    font-size:xx-large;
+    font:bolder;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    margin-left: 10%;
+    color:#ffffff;
+}
+
+.fimage img {
+    width: 1000px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    margin-left: 5%;
+}
+
+.fimage:hover {
+    transform: scale(1.1);
+}
+
+.fimage:hover img {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Movie Grid Layout */
+.movies {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.5s;
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
+    margin-left: 1%;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns:max-content;
+    gap: 20px;
+}
+
+/* Movie Cards with Hover Effects */
+.movie {
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+    transform: scale(1.1);
+}
+
+.movie:hover img {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container {
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.container img, .container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.container video {
+    opacity: 0;
+}
+
+.container:hover img {
+    opacity: 0;
+}
+
+.container:hover video {
+    opacity: 1;
+    autoplay: true;
+}
